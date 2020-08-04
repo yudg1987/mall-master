@@ -28,7 +28,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/D2C-Cai/mall-config.git
+          #uri: https://github.com/D2C-Cai/mall-config.git
+          uri: https://github.com/yudg1987/mall-config.git
+          force-pull: true
 
   # rabbitmq
   rabbitmq:

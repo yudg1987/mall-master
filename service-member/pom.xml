@@ -33,6 +33,17 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    
+    <repositories>
+		<repository>
+			<id>aliyun-cache</id>
+			<name>repo1-cache</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
     <dependencies>
         <dependency>

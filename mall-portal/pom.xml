@@ -23,6 +23,17 @@
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <docker.image.prefix>mall</docker.image.prefix>
     </properties>
+    
+    <repositories>
+		<repository>
+			<id>aliyun-cache</id>
+			<name>repo1-cache</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
     <dependencyManagement>
         <dependencies>
