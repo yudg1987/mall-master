@@ -4,7 +4,7 @@
    [![Badge](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu/#/zh_CN)
 
 　　SpringCloud（Finchley.RELEASE）+SpringBoot（2.0.7）项目骨架，eureka+config+bus+feign+ribbon+hystrix+zuul等组件支持，MyBatis+Redis+MongoDB+RabbitMQ+Elasticsearch等集群配置，LCN（5.0.2.RELEASE）分布式事务框架，支持Docker部署。<br>
-　　作者QQ：[709931138]() 作者邮箱：[709931138@qq.com]()<br>
+　　作者QQ：[398305246]() 作者邮箱：[398305246@qq.com]()<br>
 　　具体业务代码参见：https://github.com/D2C-Cai/shop-mall 支持平滑分布式改造
 
 ## 背景介绍
