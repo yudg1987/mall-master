@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: service-product
+  # config
+  cloud:
+    config:
+      uri: http://10.5.122.34:2001
+      profile: dev
+      label: master

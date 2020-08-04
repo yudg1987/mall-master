@@ -1,0 +1,140 @@
+# tomcat
+server:
+  port: 8002
+
+# eureka
+eureka:
+  instance:
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://10.5.122.34:1001/eureka/
+
+# feign
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 5000
+
+# hystrix
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
+# actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# tx-lcn
+tx-lcn:
+  client:
+    manager-address: 10.5.122.34:8070
+    resource-order: 0
+  logger:
+    enabled: false
+  message:
+    netty:
+      wait-time: 5000
+  springcloud:
+    loadbalance:
+      enabled: true
+
+# spring
+spring:
+  application:
+    name: service-order
+
+  # database
+  datasource:
+    url: jdbc:mysql://172.31.46.2:3306/mall?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: iflytek
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+
+  # redis
+  redis:
+    database: 0
+    host: 172.31.46.2
+    port: 6379
+    jedis:
+      pool:
+        max-active: 1000
+        max-idle: 100
+        min-idle: 1
+
+  data:
+    # mongodb
+    mongodb:
+      uri: mongodb://172.31.46.2:27017/mall
+
+    # elasticsearch
+    elasticsearch:
+      cluster-name: d2cmall-es
+      cluster-nodes: 172.31.46.2:9300
+
+  # rabbitmq
+  rabbitmq:
+    host: 172.31.46.2
+    port: 5672
+    username: guest
+    password: guest
+
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  typeAliasesPackage: com.d2c.*.*.model
+  global-config:
+    db-config:
+      id-type: id_worker
+      field-strategy: not_null
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    sql-parser-cache: true
+  configuration:
+    auto-mapping-behavior: partial
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+
+######################################################### cluster ######################################################
+
+#  # redis
+#  redis:
+#    database: 0
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        min-idle: 0
+#    cluster:
+#      nodes:
+#        - 172.31.46.2:7001
+#        - 172.31.46.2:7002
+#        - 172.31.46.2:7003
+#        - 172.31.46.2:7004
+#        - 172.31.46.2:7005
+#        - 172.31.46.2:7006
+
+#  data:
+#  # mongodb
+#    mongodb:
+#      uri: mongodb://172.31.46.2:27017,172.31.46.2:27017,172.31.46.2:27017/shop
+
+#  # elasticsearch
+#    elasticsearch:
+#      cluster-name: d2cmall-es
+#      cluster-nodes: 172.31.46.2:9300,172.31.46.2:9300,172.31.46.2:9300
+
